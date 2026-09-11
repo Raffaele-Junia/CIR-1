@@ -1,0 +1,186 @@
+/* Définition des couleurs principales pour le mode clair */
+:root {
+    --background-color1: darkslateblue;
+    --background-color3: lightsteelblue;
+    --background-color7: #b4b4b4;
+    --background-color11: #9F93FF;
+    --text-color1: #555;
+    --text-color4: #333;
+}
+
+/* Adaptation des couleurs pour le mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color1: #1F1F1F;
+        --background-color3: #2F2F2F;
+        --background-color7: #686868;
+        --background-color11: #2F2F2F;
+        --text-color1: #313338;
+        --text-color4: #B4B4B4;
+    }
+}
+
+/* Style pour le conteneur principal de la grille */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+    grid-template-rows: auto auto auto; /* Hauteurs automatiques */
+    grid-gap: 20px; /* Espacement entre les éléments */
+    max-width: 800px; /* Largeur maximale de la grille */
+    margin: 0 auto; /* Centrer la grille */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Style pour les articles de la grille */
+article {
+    background-color: var(--background-color11);
+    border: 1px solid var(--background-color11);
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px; /* Hauteur uniforme */
+    transition: transform 0.3s ease; /* Transition sur les transformations */
+}
+
+/* Style pour les images des articles */
+article img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Échelle proportionnelle de l'image */
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Transition pour les effets au survol */
+    margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes des articles */
+article p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: var(--text-color4);
+}
+
+/* Style pour les titres des articles */
+article h3 {
+    font-size: 18px;
+    color: #e63946; /* Rouge pour accentuer les titres */
+    margin: 10px 0 0;
+}
+
+/* Style pour les liens dans les articles */
+article a {
+    text-decoration: none;
+    color: inherit; /* Utilise la couleur actuelle du texte */
+}
+
+/* Effet au survol des images */
+article:hover img {
+    transform: scale(1.2); /* Agrandissement de 20% */
+}
+
+/* Effet au survol des articles */
+article:hover {
+    transform: translateY(-5px); /* Déplacement vers le haut */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+/* Conteneur global regroupant la grille et la section des avis */
+.container-wrapper {
+    display: flex;
+    align-items: flex-start; /* Aligne les deux sections en haut */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Espacement entre la grille et la section des avis */
+    padding: 20px;
+}
+
+/* Style pour la section des avis */
+.avis {
+    flex: 1; /* Prend tout l'espace disponible */
+    position: sticky;
+    top: 20px; /* Reste visible en haut lors du défilement */
+    background-color: var(--background-color3);
+    border: 1px solid var(--background-color3);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    max-height: 400px; /* Limite la hauteur */
+    overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
+    text-align: center; /* Centrage du texte */
+}
+
+/* Style pour le titre de la section des avis */
+.avis h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-color4);
+    text-align: center;
+}
+
+/* Contenu des avis */
+.avis-contenu {
+    margin-bottom: 20px;
+}
+
+/* Style pour les étoiles dans les avis */
+.etoile {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: gold; /* Couleur dorée */
+}
+
+/* Style pour les paragraphes dans les avis */
+.avis-contenu p {
+    font-size: 14px;
+    margin: 0;
+    color: #555;
+    line-height: 1.5; /* Meilleure lisibilité */
+}
+
+/* Style pour le texte en gras dans les avis */
+.avis-contenu strong {
+    font-weight: bold;
+    color: var(--text-color4);
+}
+
+/* Style global du corps de la page */
+body {
+    background-color: var(--background-color7);
+    scrollbar-color: var(--background-color3) var(--background-color1); /* Style de la barre de défilement */
+}
+
+
+@media (max-width: 768px) {
+    .container-wrapper {
+        flex-direction: column;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
+
+    .avis {
+        position: relative; /* Supprime la position sticky pour les petits écrans */
+        max-height: unset; /* Laisse la hauteur s'ajuster automatiquement */
+    }
+}
+
+@media (max-width: 480px) {
+    article img {
+        width: 120px;
+        height: 120px;
+    }
+
+    article h3 {
+        font-size: 16px;
+    }
+
+    article p {
+        font-size: 14px;
+    }
+}

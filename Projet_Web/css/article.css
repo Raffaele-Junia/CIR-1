@@ -1,0 +1,240 @@
+:root {
+    --background-color3: lightsteelblue;
+    --background-color4: gainsboro;
+    --background-color7: #b4b4b4;
+    --background-color10:  #9F93FF;
+    --text-color4: #333;
+    --text-color9: #555;
+}
+
+@media (prefers-color-scheme: dark) { /* Ce media permet de détecter si l'utilisateur du site est en mode sombre ou non, s'il est en mode sombre, les variables de couleurs changeront avvec celles qui sont définies ci-dessous */
+    :root {
+        --background-color3: #2F2F2F; /* Couleur de fond des encadrés */
+        --background-color4: #313338;
+        --background-color7: #686868;
+        --background-color10: #1F1F1F;
+        --text-color4: #B4B4B4;
+        --text-color9: #d4edda;
+    }
+}
+
+/* Ce bloc met en forme la section principale de l'article avec un fond de la couleur background-color3, des bordures idem, et un effet d'ombre. */
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    background-color: var(--background-color3);
+    border: 1px solid var(--background-color3);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+/*  Ce bloc fait le style des images dans la section principale avec une transition qui est ajoutée pour agrandir l'image au survol avec un effet d'ombre. */
+.image img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Agrandissement de l'image au survol */
+.image img:hover {
+    transform: scale(1.05);
+}
+
+/* Style du titre principal de l'article. */
+.titre {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-color4);
+}
+
+/* Style du prix de l'article */
+.prix {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #e63946;
+    margin-bottom: 20px;
+}
+
+/* Style du texte descriptif */
+.texte {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-color9);
+    margin-bottom: 15px;
+}
+
+/*  Style du bouton CTA */
+.bouton {
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet au survol : le bouton change de couleur et se soulève légèrement. */
+.bouton:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+}
+
+/* Ce bloc définit une grille pour afficher des produits, avec deux colonnes faisant pour chacune la moitie de la fenetre soit 1fr pour une meilleure mise en page */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* article organise la mise en page avec une disposition de type flexbox*/
+article {
+    background-color: var(--background-color10);
+    border: 1px solid var(--background-color10);
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Mise en flexbox */
+    flex-direction: column; /* Organisation verticale */
+    align-items: center; /* Centre horizontal des éléments */
+    justify-content: space-between; /* Distribution verticale */
+    height: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Définition du style des images des articles */
+article img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+/* Définition du style des paragraphes de p */
+article p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 5px 0;
+    color: var(--text-color4);
+}
+
+/* Définition du style des titres h3 d'article*/
+article h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: var(--text-color9);
+    margin: 10px 0 0;
+}
+
+/* Style des liens dans article*/
+article a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Effet au survol de l'image */
+article:hover img {
+    transform: scale(1.2);
+}
+
+/* Effet au survol*/
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Définition du style de avis : position en sticky pour pouvoir faire défiler les avis , ajout de bordure , d'alignement et d'overflow */
+.avis {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    background-color: var(--background-color4);
+    border: 1px solid var(--background-color4);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* style des titres h4 de classe avis*/
+.avis h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-color4);
+    text-align: center;
+}
+
+/* ajout d'une marge*/
+.avis-contenu {
+    margin-bottom: 20px;
+}
+
+/* Style de stars */
+.etoile {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+/* style des avis des paragraphes*/
+.avis-contenu p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-color4);
+    line-height: 1.5;
+}
+
+.avis-contenu strong {
+    font-weight: bold;
+    color: var(--text-color9);
+}
+
+/*style du body */
+body{
+    background-color: var(--background-color7);
+}
+
+/* style de section et h2 pour centrer le titre */
+section + h2{
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .principal {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    article {
+        height: auto;
+    }
+
+    .bouton {
+        padding: 8px 16px;
+    }
+}

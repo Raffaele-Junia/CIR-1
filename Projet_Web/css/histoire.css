@@ -1,0 +1,83 @@
+:root {
+    --background-color5: darkslateblue;
+    --background-color9: gainsboro;
+    --text-color5: white;
+    --text-color6: black; /* Variables CSS pour faciliter la cohérence des couleurs entre les differentes pages  */
+}
+
+@media (prefers-color-scheme: dark) { 
+    /* Mode sombre : les couleurs changent automatiquement selon la préférence */
+    :root {
+        --background-color5: #d4edda;
+        --background-color9: #686868;
+        --text-color5: #313338;
+        --text-color6: #B4B4B4;
+    }
+}
+
+* {
+    box-sizing: border-box; /* Prend les bordures et le padding dans la taille totale */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Animation d'arrière-plan avec un dégradé qui se déplace */
+    background: linear-gradient(45deg, var(--background-color9) 25%, var(--background-color5) 25%, var(--background-color5) 50%, var(--background-color9) 50%, var(--background-color9) 75%, var(--background-color5) 75%);
+    background-size: 200% 200%;
+    animation-name: backgroundanimation;/*parametrage de notre animation pour le background*/
+    animation-duration:10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    color: var(--text-color6);
+
+}
+
+@keyframes backgroundanimation {
+    /* Déplacement progressif de l'arrière-plan */
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+main {
+    /*  modification de style du Conteneur principal  */
+    background-color: var(--text-color5);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main h1 {
+    text-align: center; /* Centre le texte */
+    margin-bottom: 20px;
+    color: var(--background-color5);
+}
+
+main p {
+    text-align: justify; /* Facilite la lecture des textes */
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    /* Adaptation aux petits écrans */
+    main {
+        padding: 10px;
+        margin: 10px;
+        max-width: 100%; /* Utilise toute la largeur */
+        box-shadow: none;
+        border-radius: 0;
+    }
+    main h1 {
+        font-size: 24px; /* Réduit la taille des titres */
+    }
+}

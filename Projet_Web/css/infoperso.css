@@ -1,0 +1,92 @@
+:root {
+    --background-color3: lightsteelblue;
+    --background-color4: gainsboro;
+    --background-color10: #9F93FF;
+    --button-background-color: #007BFF;
+    --button-text-color: #ffffff;
+    --text-color: #2c3e50;
+    --border-color: #cccccc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color3: #2F2F2F;
+        --background-color4: #313338;
+        --background-color10: #1F1F1F;
+        --button-background-color: #d4edda;
+        --button-text-color: #000000;
+        --text-color: #ffffff;
+        --border-color: #444444;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color3);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--background-color4);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+table th {
+    background-color: var(--background-color10);
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--background-color4);
+}
+
+table tr:hover {
+    background-color: var(--background-color3);
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    table th, table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

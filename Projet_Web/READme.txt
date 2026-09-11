@@ -1,0 +1,2 @@
+Bonjour , 
+Il n'y as pas d'identifiant particulier a utiliser , il suffit de se connecter pour avoir accès à une interface différente ,la page "se connecter" sera remplacée par la page membres avec toutes les personnes inscrites 

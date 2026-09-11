@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockMirror - Terms of Use</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../pictures/logojeu.png" type="image/png">
+    <style>
+                :root {
+            --primary-blue: #3a3e52;
+            --dark-blue: #1b1b26;
+            --light-blue: #aeb6d3;
+            --accent-orange: #d97b2a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('../pictures/dungeon-bg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" transform="scale(-1,1) translate(-100,0)"/></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .navbar {
+            background-color: rgba(58, 62, 82, 0.5);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        
+        .navbar-brand:hover img {
+            transform: scaleX(-1);
+        }
+        
+        .container.my-5 {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-top: 5px solid var(--primary-blue);
+            backdrop-filter: blur(5px);
+        }
+        
+        .toc-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 20px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .toc-title {
+            color: var(--light-blue);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .toc-list li::before {
+            content: "↔";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+        }
+        
+        .toc-list li a {
+            color: var(--light-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .toc-list li a:hover {
+            color: var(--accent-orange);
+            padding-left: 5px;
+        }
+        
+        .section-title {
+            color: var(--light-blue);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: var(--accent-orange);
+        }
+        
+        .mirror-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .mirror-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mirror-text {
+            display: inline-block;
+            transform: scaleX(-1);
+            color: var(--light-blue);
+            opacity: 0.7;
+        }
+        
+        .mirror-clause {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+        }
+        
+        .mirror-clause::before {
+            content: "◈";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white !important;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-to-home:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white !important;
+        }
+        
+        .back-to-home::before {
+            content: "←";
+            margin-right: 8px;
+        }
+        
+        .back-to-home::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.7s;
+        }
+        
+        .back-to-home:hover::after {
+            transform: translateX(100%);
+        }
+        
+        footer {
+            background-color: rgba(58, 62, 82, 0.5);
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+            text-align: center;
+            backdrop-filter: blur(3px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            transition: transform 0.5s;
+        }
+        
+        .footer-logo img:hover {
+            transform: scaleX(-1);
+        }
+        
+        @media (max-width: 768px) {
+            .toc-container {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            
+            .container.my-5 {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../pictures/logojeu.png" alt="BlockMirror Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="toc-container">
+                    <h2 class="toc-title">Table of <span class="mirror-text">Contents</span></h2>
+                    <ul class="toc-list">
+                        <li><a href="#acceptance">Acceptance</a></li>
+                        <li><a href="#license">License</a></li>
+                        <li><a href="#conduct">Conduct</a></li>
+                        <li><a href="#data">Data</a></li>
+                        <li><a href="#modifications">Changes</a></li>
+                        <li><a href="#liability">Liability</a></li>
+                        <li><a href="#legal">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-9">
+                <h1 class="mb-4">Terms of <span class="mirror-text">Use</span></h1>
+                <p class="lead">Last updated: May 12, 2025</p>
+                
+                <div class="mirror-section" id="acceptance">
+                    <h2 class="section-title">1. Acceptance of Terms</h2>
+                    <div class="mirror-clause">
+                        By installing or using BlockMirror, you fully accept these terms. If you do not agree with them, please do not use the game.
+                    </div>
+                    <div class="mirror-clause">
+                        These terms apply to all versions of the game, including future updates and expansions, unless otherwise explicitly stated.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="license">
+                    <h2 class="section-title">2. License of Use</h2>
+                    <div class="mirror-clause">
+                        BlockMirror is provided under a personal, non-exclusive, and non-transferable license for your personal use only.
+                    </div>
+                    <div class="mirror-clause">
+                        You are not allowed to: copy, modify, distribute, sell, rent, sublicense, or create derivative works based on the game or its elements.
+                    </div>
+                    <div class="mirror-clause">
+                        Any violation of these restrictions may result in license termination and legal action.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="conduct">
+                    <h2 class="section-title">3. Expected Conduct</h2>
+                    <div class="mirror-clause">
+                        BlockMirror is a game that promotes thinking and respect. Any inappropriate behavior in online features (if applicable) may result in account suspension.
+                    </div>
+                    <div class="mirror-clause">
+                        You agree not to use the game in any way that is harmful, illegal, or detrimental to others.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="data">
+                    <h2 class="section-title">4. Data Collection</h2>
+                    <div class="mirror-clause">
+                        BlockMirror may collect certain anonymous data to improve user experience and detect bugs. This data does not personally identify you.
+                    </div>
+                    <div class="mirror-clause">
+                        For more information about the data collected and its usage, please consult our <a href="#" style="color: var(--primary-blue);">Privacy Policy</a>.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="modifications">
+                    <h2 class="section-title">5. Changes to Terms</h2>
+                    <div class="mirror-clause">
+                        We reserve the right to modify these terms at any time. Changes will take effect as soon as they are published on this page.
+                    </div>
+                    <div class="mirror-clause">
+                        It is your responsibility to regularly check this page for updates.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="liability">
+                    <h2 class="section-title">6. Liability</h2>
+                    <div class="mirror-clause">
+                        BlockMirror is provided "as is", without any warranty of any kind, express or implied. We do not guarantee that the game will be error-free or uninterrupted.
+                    </div>
+                    <div class="mirror-clause">
+                        To the fullest extent permitted by law, we disclaim any liability for direct, indirect, incidental, special, or consequential damages arising from the use or inability to use the game.
+                    </div>
+                </div>
+                
+                <div class="mirror-section" id="legal">
+                    <h2 class="section-title">7. Legal Provisions</h2>
+                    <div class="mirror-clause">
+                        These terms are governed by French law. Any dispute related to these terms will be subject to the exclusive jurisdiction of French courts.
+                    </div>
+                    <div class="mirror-clause">
+                        If any provision of these terms is deemed invalid, the remaining provisions shall remain in full force and effect.
+                    </div>
+                </div>
+                
+                <a href="../index.html" class="back-to-home">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../pictures/logojeu.png" alt="BlockMirror Logo">
+            </div>
+            <p>BlockMirror – An innovative puzzle game © 2023</p>
+            <p class="text-muted">All rights reserved. Conditions in the mirror may be reversed.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

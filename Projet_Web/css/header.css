@@ -1,0 +1,107 @@
+:root {
+    --background-color1: darkslateblue;
+    --background-color3: lightsteelblue;
+    --text-color3: #d4edda;
+}
+
+@media (prefers-color-scheme: dark) { 
+    :root {
+        --background-color1: #1F1F1F; 
+        --background-color3: #2F2F2F; 
+        --text-color3: #B4B4B4;
+    }
+}
+
+header {
+    background-color: var(--background-color1);
+    height: 80px;
+    color: var(--text-color3);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    width: 4%;
+    position: absolute;
+    margin-right: left; 
+    left:0%;
+    top:1%;
+}
+
+header h1 {
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+header a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: auto; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    background-color: var(--background-color3);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav h1 {
+    font-size: 22px;
+    color: var(--background-color1);
+    margin-right: 20px;
+}
+
+nav ol {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+nav ol li {
+    margin: 0;
+}
+
+nav ol li a {/*style des elements du header*/
+    color: var(--text-color3);
+    font-size: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+}
+.eltact{
+    font-weight:bold;/*mise en gras dans le nav de la page sur laquel on est*/
+}
+nav ol li a:hover {
+    text-decoration: underline;/*modification du style des liens du nav quand la souris passe dessus*/
+}
+@media (max-width: 768px) {
+    header {
+        align-items: center;/*centrage vertical des éléments selectionnées*/
+        padding: 10px;
+    }
+
+    header img.logo-site {
+        margin: 0 auto 10px; /* Centre le logo pour le format téléphone*/
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav ol li a {
+        width: 90%; 
+        margin: 0 auto; 
+        text-align: center; 
+        padding: 10px;
+    }
+}
+

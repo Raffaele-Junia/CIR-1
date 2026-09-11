@@ -1,0 +1,168 @@
+/* Généralités sur la mise en page */
+* {
+    box-sizing: border-box; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none; 
+    font-size: 18px;
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Variables CSS pour les couleurs principales */
+:root {
+    --background-color18: #f0f8ff;
+    --background-color2: lightsteelblue;
+    --text-color: #555;
+    --text-color2: #d4edda;
+    --background-color3: gainsboro;
+    --button-background-color: #007BFF; 
+    --button-text-color: #ffffff; 
+    --border-color: #ddd; 
+    --text-color19: #4f4f4f;
+    --text-color22: black;
+    --background-color34: #B4B4B4;
+}
+
+/* Variables adaptées au mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color18: #1F1F1F;
+        --background-color2: #2F2F2F;
+        --text-color: #313338;
+        --text-color2: #B4B4B4;
+        --background-color3: #313338;
+        --button-background-color: #d4edda;
+        --button-text-color: #000000;
+        --border-color: #000000;
+        --text-color19: #2F2F2F;
+        --text-color22: #f0f8ff;
+        --background-color34: #2C3E50;
+    }
+}
+
+/* Style global pour le corps de la page */
+body {
+    background-color: var(--background-color3) !important;
+    color: var(--text-color22);
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+}
+
+/* Style pour les titres de villes */
+.ville {
+    color: white;
+    width: 1000px;
+    text-align: center;
+}
+
+/* Style pour le diaporama */
+#container {
+    width: 75%;
+    margin: auto;
+    height: 400px;
+    overflow: hidden; /* Cache les débordements */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Images dans le diaporama */
+#container .diapo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Conteneur des images pour l'animation */
+#container .diapo {
+    display: flex; 
+    height: 100%;
+    width: 400%; 
+    position: relative;
+    animation-name: diaporama;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Animation du diaporama */
+@keyframes diaporama {
+    0%, 20% {
+        left: 0%;
+    }
+    40%, 60% {
+        left: -100%;
+    }
+    80%, 100% {
+        left: -200%;
+    }
+}
+
+/* Style pour les articles */
+section article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+section article {
+    width: 30%;
+    background-color: var(--background-color34);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol des articles */
+section article:hover {
+    transform: translateY(-10px); /* Déplace légèrement vers le haut */
+    cursor: pointer;
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+    #container {
+        width: 90%;
+        height: 300px; 
+    }
+
+    #container .diapo img {
+        object-fit: contain; 
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    section article {
+        width: 100%; 
+    }
+
+    section article img {
+        height: 150px; 
+    }
+}
+
+/* Conteneurs pour organiser les sections */
+.conteneur {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+}
+
+/* Espacement spécifique pour chaque conteneur */
+.conteneur1 {
+    margin-left: 100px;
+}
+
+.conteneur2 {
+    margin-right: 100px;
+}

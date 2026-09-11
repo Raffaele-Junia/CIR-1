@@ -1,0 +1,217 @@
+        :root {
+            --primary-blue: #1a73e8;
+            --dark-blue: #0d47a1;
+            --light-blue: #bbdefb;
+            --mirror-effect: #e3f2fd;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        
+        .navbar-brand:hover img {
+            transform: scaleX(-1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" transform="scale(-1,1) translate(-100,0)"/></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+        }
+        
+        .game-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .mirror-text {
+            display: inline-block;
+            transform: scaleX(-1);
+            color: var(--light-blue);
+            opacity: 0.7;
+        }
+        
+        .game-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-blue);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .gameplay-section {
+            background-color: var(--light-blue);
+            padding: 5rem 0;
+        }
+        
+        .screenshot-container {
+            position: relative;
+            margin: 2rem 0;
+            perspective: 1000px;
+        }
+        
+        .screenshot {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s;
+            background-color: var(--mirror-effect);
+            padding: 20px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .screenshot::before {
+            content: "Image du jeu";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .screenshot-mirror {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirror-effect);
+            border-radius: 10px;
+            transform: scaleX(-1);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+        
+        .btn-mirror {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-mirror::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+        
+        .btn-mirror:hover::after {
+            transform: translateX(100%);
+        }
+        
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        
+        .floating-mirror {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) scaleX(1); }
+            50% { transform: translateY(-20px) scaleX(-1); }
+            100% { transform: translateY(0px) scaleX(1); }
+        }
+        
+        .rotate-on-hover:hover {
+            animation: rotate 0.5s linear;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .mirror-section {
+            position: relative;
+        }
+        
+        .mirror-section::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom, rgba(227, 242, 253, 0.8), transparent);
+        }
+

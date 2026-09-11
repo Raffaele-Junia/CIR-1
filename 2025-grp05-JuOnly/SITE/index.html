@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlockMirror - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="icon" href="pictures/logojeu.png" type="image/png" />
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    :root {
+      --primary-blue: #3a3e52;
+      --dark-blue: #1b1b26;
+      --light-blue: #aeb6d3;
+      --mirror-effect: rgba(255, 255, 255, 0.05);
+      --accent-orange: #d97b2a;
+    }
+
+    body {
+      background: url("pictures/dungeon-bg.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background-color: rgba(58, 62, 82, 0.8);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-section {
+      padding: 5rem 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .game-title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .mirror-text {
+      display: inline-block;
+      transform: scaleX(-1);
+      color: var(--light-blue);
+      opacity: 0.7;
+    }
+
+    .btn-mirror {
+      background-color: var(--primary-blue);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .btn-mirror:hover {
+      background-color: var(--dark-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+    .btn-mirror::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.7s;
+    }
+
+    .btn-mirror:hover::after {
+      transform: translateX(100%);
+    }
+
+    .feature-card {
+      background-color: rgba(255, 255, 255, 0.06);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      color: #f0f0f0;
+      border-top: 3px solid var(--primary-blue);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--light-blue);
+    }
+
+    .gameplay-section {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .footer-logo img {
+      height: 80px;
+    }
+
+    footer {
+      background-color: rgba(58, 62, 82, 0.5);
+      color: white;
+      padding: 2rem 0;
+      margin-top: auto;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="pictures/logojeu.png" alt="BlockMirror Logo" height="60" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gameplay">Gameplay</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conditions">Terms of use</a></li>
+          <li class="nav-item"><a class="nav-link" href="php/profil.php">My Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="game-title">Block<span class="mirror-text">Mirror</span></h1>
+      <p class="game-description lead mt-3">
+        A revolutionary maze game where every move counts double.
+        Control two characters simultaneously – one in front of the mirror, the other behind.
+      </p>
+      <a href="php/login.php" class="btn btn-lg btn-mirror">Play now</a>
+    </div>
+  </section>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Unique features</h2>
+        <p class="lead">Discover what makes BlockMirror so special</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">↔️</div>
+            <h3>Mirror mechanics</h3>
+            <p>Control two characters simultaneously with reversed movements.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🧩</div>
+            <h3>Complex riddles</h3>
+            <p>Solve mazes where obstacles must be tackled in reflection.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Inverted world</h3>
+            <p>Some paths are only visible through the mirror. Use them wisely!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gameplay" class="gameplay-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2>An innovative gameplay</h2>
+          <ul class="list-unstyled">
+            <li>• Move left → reflection goes right</li>
+            <li>• Solve puzzles by coordinating both</li>
+            <li>• Explore secrets in the mirror world</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="pictures/niveau/gameplay.png" alt="Gameplay Screenshot" class="img-fluid rounded shadow" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conditions" class="py-5">
+    <div class="container text-center">
+      <h2>Terms of use</h2>
+      <p class="lead mb-4">Make sure you've read our terms before playing:</p>
+      <a href="html/conditions.html" class="btn btn-lg btn-mirror">Read the terms of use</a>
+      <div class="mt-5">
+        <img src="pictures/logojeu.png" alt="BlockMirror Logo" style="height: 100px;" class="rotate-on-hover" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <img src="pictures/logojeu.png" alt="BlockMirror Logo" />
+      </div>
+      <p>BlockMirror - An innovative puzzle game © 2025</p>
+      <p class="text-muted">All rights reserved. Movements in the mirror may be reversed.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

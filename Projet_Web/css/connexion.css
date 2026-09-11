@@ -1,0 +1,172 @@
+/* Les !important permettent de bypass certains problèmes css qui empêchait la cohésion de certains styles*/
+
+* { /* On définit la police */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main{ /* On grossit la police dans le corp principal */
+    font-weight: bold;
+}
+
+.connexion {  /* Les éléments seront centrés, on ajoute une couleur et on aggrandit la police */
+    margin: auto;
+    color: #556B61 !important;
+    font-size: large;
+}
+
+:root{ /* On définit des variables pour les couleurs utlilisées dasn notre code (pour le mode clair) */
+    --background-color3: lightsteelblue;
+    --background-color4: gainsboro;
+    --background-color10:  #9F93FF;
+    --button-background-color: #007BFF;
+    --button-text-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) { /* Ce media permet de détecter si l'utilisateur du site est en mode sombre ou non, s'il est en mode sombre, les variables de couleurs changeront avvec celles qui sont définies ci-dessous */
+    :root {
+        --background-color3: #2F2F2F;
+        --background-color4: #313338;
+        --background-color10: #1F1F1F;
+        --button-background-color: #d4edda;
+        --button-text-color: #000000;
+    }
+}
+
+.encadre { /* On définit les dimensions, les styles de bordures, l'arrière plan et l'organisation de l'encadré principal */
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--background-color10) !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color10) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color2);
+    margin-top: 30px;
+}
+
+
+/* Style des boutons submit et reset */
+input[type="submit"], input[type="reset"] {
+    background-color: var(--button-background-color); /* Couleur de fond verte pour les boutons */
+    color: var(--button-text-color); /* Couleur du texte verte claire */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Enlever la bordure par défaut */
+    border-radius: 4px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Le curseur devient une main quand on survole le bouton */
+    margin-top: 10px; /* Espacement au-dessus des boutons */
+    font-weight: bold; /* Met le texte du bouton en gras */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Ajoute une transition douce pour les effets au survol */
+}
+
+
+/* Effets au survol des boutons */
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="compte"]:hover {
+    background-color: var(--button-background-color) !important; /* Au survol du curseur, la couleur de fond du bouton change, de plus, le !important permet de bypass certains problèmes css qui empêchait la couleur de l'arrière-plan d'apparaître */
+    color: var(--button-text-color); /* Au survol du curseur, la couleur du texte du bouton change */
+    transform: scale(1.1);
+}
+
+
+
+/* Style de l'élément "ou" */
+.ou {
+    margin: 20px; /* Marge de 20px autour de l'élément */
+    color: #6c757d; /* Couleur du texte grise */
+    font-size: large; /* Taille de police plus grande pour le texte "ou" */
+}
+
+
+/* Style du bouton "Créer un compte" */
+input[type="compte"] {
+    background-color: var(--button-background-color) !important; /* Couleur de fond gris clair pour le bouton "Créer un compte" */
+    color: var(--button-text-color); /* Couleur du texte gris foncé */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Enlever la bordure par défaut */
+    border-radius: 4px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Le curseur devient une main quand on survole le bouton */
+    margin-top: 10px; /* Espacement au-dessus du bouton */
+    font-weight: bold; /* Met le texte en gras */
+    text-align: center; /* Centre le texte dans le bouton */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transition douce au survol */
+}
+
+/* Espacement spécifique pour le premier encadré */
+.encadre:first-of-type {
+    margin-bottom: 30px; /* Ajoute un espacement de 30px sous le premier encadré */
+}
+
+
+/* Style du deuxième encadré */
+.encadre2 {
+    max-width: 500px; /* La largeur maximale du deuxième encadré est de 500px */
+    width: 100%; /* L'encadré prend toute la largeur disponible jusqu'à la largeur maximale */
+    height: auto; /* La hauteur de l'encadré s'adapte à son contenu */
+    margin: 0 auto; /* Centre l'encadré horizontalement */
+    padding: 20px; /* Espacement interne autour du contenu */
+    border: 1px solid var(--background-color3) !important; /* Bordure grise claire autour de l'encadré */
+    border-radius: 8px; /* Coins arrondis de l'encadré */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée légère pour un effet de profondeur */
+    background-color: var(--background-color3) !important; /* Couleur de fond claire pour l'encadré */
+    /* Permet de centrer le texte et les éléments enfants à l'intérieur de l'encadré */
+    display: flex;
+    flex-direction: column; /* Les éléments sont disposés en colonne */
+    justify-content: center; /* Centrer verticalement les éléments */
+    align-items: center; /* Centrer horizontalement les éléments */
+    text-align: center; /* Centrer le texte à l'intérieur des éléments */
+    margin-bottom: 30px;
+}
+
+
+/* Style pour le lien dans le deuxième encadré */
+.encadre2 a {
+    text-decoration: none; /* Enlever le soulignement du lien */
+    font-size: 18px; /* Taille de la police du lien */
+    color: grey; /* Couleur bleue pour le lien */
+    font-weight: bold; /* Met le texte en gras */
+    transition: color 0.3s, transform 0.3s; /* Transition douce pour l'effet au survol */
+}
+
+
+/* Effet au survol du lien dans le deuxième encadré */
+.encadre2 a:hover {
+    transform: scale(1.1); /* Agrandit légèrement le lien au survol */
+}
+
+
+/* Effet de zoom sur survol ou au clic pour certains éléments */
+.grossir:hover, .grossir:active {
+    transform: scale(1.2); /* Agrandit légèrement l'élément au survol ou lorsqu'il est actif */
+}
+
+
+/* Media Query pour les écrans avec une hauteur maximale de 768px */
+@media (max-height: 768px) {
+    /* Modifie la hauteur maximale de l'encadré */
+    .encadre, .encadre2 {
+        max-height: 700px; /* Limite la hauteur de l'encadré à 700px pour les écrans plus grands */
+    }
+
+
+    /* Modifie la taille des boutons pour des écrans moyens */
+    input[type="submit"], input[type="reset"], input[type="compte"] {
+        font-size: 16px; /* Taille de police un peu plus grande */
+        padding: 10px 18px; /* Espacement légèrement plus grand */
+    }
+
+
+    /* Ajuste la hauteur de la zone de texte */
+    .message-box {
+        height: 120px; /* Limite la hauteur de la zone de texte */
+    }
+}
+
+body{
+    background-color: var(--background-color4);
+}

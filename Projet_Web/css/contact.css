@@ -1,0 +1,159 @@
+
+/* Applique une police de caractères par défaut à tous les éléments.*/
+   * {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Style pour le contenu principal de la page. Texte mis en gras. */
+main {
+    font-weight: bold;
+}
+
+:root {
+    --background-color3: lightsteelblue;
+    --background-color4: gainsboro;
+    --background-color10: #9F93FF;
+    --button-background-color: #007BFF;
+    --button-text-color: #ffffff;
+}
+
+/* Gestion du mode sombre. Si l'utilisateur active ce mode, 
+   les variables de couleurs s'adaptent automatiquement. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color3: #2F2F2F;
+        --background-color4: #313338;
+        --background-color10: #1F1F1F;
+        --button-background-color: #d4edda;
+        --button-text-color: #000000;
+    }
+}
+
+
+/* Définit le style des sections principales de la page : 
+   marge automatique pour un centrage, couleur personnalisée et taille de texte large. */
+.contact, .infos, .demande {
+    margin: auto;
+    color: #556B61 !important;
+    font-size: large;
+}
+
+/* Style pour une zone de texte non redimensionnable.
+   La largeur est définie pour remplir l'espace disponible, et une hauteur minimale garantit une taille lisible. */
+.message-box {
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+}
+
+/* Style de l'encadré principal. Ce bloc est centré et inclut des bordures, 
+   des coins arrondis, un ombrage, et une mise en page avec Flexbox. */
+.encadre {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid var(--background-color10) !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color10) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Style pour les encadrés secondaires. 
+   Ces blocs sont similaires à l'encadré principal mais ont une largeur ajustable 
+   et des couleurs personnalisées. */
+.encadre1, .encadre2 {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--background-color3) !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color3) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--text-color2);
+}
+
+/* Ajustements spécifiques aux alignements pour des éléments à position relative.
+   Utilisation d'éléments positionnés par rapport à leur conteneur. */
+.alignement {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.monsieur {
+    position: absolute;
+    left: 20%;
+    top: 3px;
+}
+
+.madame {
+    position: absolute;
+    right: 20%;
+    top: 3px;
+}
+
+.encadre2 {
+    margin-top: 25px;
+}
+
+
+/* Ajustements pour les écrans ayant une hauteur inférieure à 768px. 
+   Les blocs deviennent adaptatifs en hauteur et réduisent leurs marges et paddings. */
+@media (max-height: 768px) {
+    .encadre, .encadre1, .encadre2 {
+        max-height: none;
+        height: auto;
+        padding: 15px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .message-box {
+        height: 120px;
+    }
+}
+
+
+/* Effet de zoom sur survol des éléments. Les éléments prennent 10% de taille en plus. */
+.grossir:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour les boutons de soumission et de réinitialisation. */
+input[type="submit"], input[type="reset"] {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Survol des boutons : transition */
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: var(--button-background-color) !important;
+    color: var(--button-text-color);
+}
+
+/* Couleur de fond par défaut du corps de la page. */
+body {
+    background-color: var(--background-color4);
+}

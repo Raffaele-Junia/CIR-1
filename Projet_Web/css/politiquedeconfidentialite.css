@@ -1,0 +1,96 @@
+/* Définition des couleurs principales pour les styles de la politique de confidentialité */
+:root {
+    --background-color6: #f4f4f9;
+    --text-color7: #333;
+    --link-color: #3498db;
+    --title-color: #2c3e50;
+}
+
+/* Adaptation des couleurs pour le mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color6: #313338;
+        --text-color7: #f4f4f9;
+        --link-color: grey;
+        --title-color: #B4B4B4;
+    }
+}
+
+/* Style général pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color6);
+    color: var(--text-color7);
+}
+
+/* Mise en page principale */
+main {
+    width: 85%;
+    margin: auto;
+}
+
+/* Style des titres principaux */
+.titre {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--title-color);
+}
+
+/* Style général pour le texte principal */
+.texte {
+    margin: 10px 20px;
+    font-size: 1rem;
+    color: var(--title-color);
+}
+
+/* Apparence et comportement des liens */
+.lien {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Effet visuel sur les liens au survol */
+.lien:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* Style des listes */
+ol {
+    margin: 20px 40px;
+    padding: 0;
+    list-style: decimal inside;
+}
+
+/* Espacement entre les éléments de liste */
+ol li {
+    margin-bottom: 10px;
+}
+
+/* Style des paragraphes */
+p {
+    margin: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Responsive pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    /* Ajustement de la taille des titres pour petits écrans */
+    .titre {
+        font-size: 1.5rem;
+    }
+
+    /* Réduction de la taille des textes */
+    .texte {
+        font-size: 0.9rem;
+    }
+
+    /* Réduction des marges des listes */
+    ol {
+        margin: 10px 20px;
+    }
+}

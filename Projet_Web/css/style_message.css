@@ -1,0 +1,54 @@
+/* style_message.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 20px;
+}
+
+.message-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+.success {
+    border: 2px solid #4CAF50;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.error {
+    border: 2px solid #f44336;
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
